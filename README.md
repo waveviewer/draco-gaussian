@@ -45,10 +45,11 @@ Behaviour worth knowing:
 ## Build
 
 The build follows upstream Draco: CMake 3.12 or newer and a C++14 compiler.
-The third-party dependencies are Git submodules, so clone them as well.
+The third-party dependencies are bundled in `third_party`, so a plain clone is
+enough and no submodule download is needed.
 
 ```bash
-git clone --recursive https://github.com/waveviewer/draco-gaussian.git
+git clone https://github.com/waveviewer/draco-gaussian.git
 cd draco-gaussian
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j

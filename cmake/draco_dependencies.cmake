@@ -21,9 +21,9 @@ include("${draco_root}/cmake/draco_variables.cmake")
 
 # Each variable holds a user specified custom path to a local copy of the
 # sources that belong to each project that Draco depends on. When paths are
-# empty the build will be generated pointing to the Draco git submodules.
-# Otherwise the paths specified by the user will be used in the build
-# configuration.
+# empty the build will be generated pointing to the copies bundled in
+# third_party. Otherwise the paths specified by the user will be used in the
+# build configuration.
 
 # Path to the Eigen. The path must contain the Eigen directory.
 set(DRACO_EIGEN_PATH)
@@ -44,9 +44,9 @@ draco_track_configuration_variable(DRACO_GOOGLETEST_PATH)
 set(DRACO_TINYGLTF_PATH)
 draco_track_configuration_variable(DRACO_TINYGLTF_PATH)
 
-# Utility macro for killing the build due to a missing submodule directory.
+# Utility macro for killing the build due to a missing dependency directory.
 macro(draco_die_missing_submodule dir)
-  message(FATAL_ERROR "${dir} missing, run git submodule update --init")
+  message(FATAL_ERROR "${dir} missing, restore the bundled copy in third_party")
 endmacro()
 
 # Determines the Eigen location and updates the build configuration accordingly.

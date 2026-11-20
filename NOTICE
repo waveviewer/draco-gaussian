@@ -17,3 +17,19 @@ splatting support:
   src/draco/tools/draco_encoder.cc
 
 All other source files are unchanged copies from the upstream repository.
+
+Third-party code
+----------------
+
+The third_party directory contains the following projects. Each one keeps its
+own license file in its directory, and those licenses apply to the files in
+that directory.
+
+  Eigen 3.4.0, MPL2 and BSD licenses (third_party/eigen)
+  gulrak/filesystem 1.5.10, MIT license (third_party/filesystem)
+  GoogleTest 1.10.0, BSD 3-Clause license (third_party/googletest)
+  tinygltf, MIT license (third_party/tinygltf)
+
+See third_party/README.md for the pinned revisions and for the files that were
+left out to keep the repository small.
+

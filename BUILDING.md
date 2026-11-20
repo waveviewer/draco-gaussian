@@ -77,14 +77,10 @@ CMake Build Configuration
 Transcoder
 ----------
 
-Before attempting to build Draco with transcoding support you must run an
-additional Git command to obtain the submodules:
-
-~~~~~ bash
-# Run this command from within your Draco clone.
-$ git submodule update --init
-# See below if you prefer to use existing versions of Draco dependencies.
-~~~~~
+Before attempting to build Draco with transcoding support you must enable it
+when you run `cmake`. The dependencies are bundled in `third_party`, so no
+additional download step is required. See below if you prefer to use existing
+versions of the Draco dependencies.
 
 In order to build the `draco_transcoder` target, the transcoding support needs
 to be explicitly enabled when you run `cmake`, for example:
@@ -99,7 +95,7 @@ built with the transcoder support may result in increased binary sizes of the
 produced libraries and executables compared to the default CMake settings.
 
 The following CMake variables can be used to configure Draco to use local
-copies of third party dependencies instead of git submodules.
+copies of third party dependencies instead of the bundled ones.
 
 - `DRACO_EIGEN_PATH`: this path must contain an Eigen directory that includes
   the Eigen sources.
@@ -108,8 +104,8 @@ copies of third party dependencies instead of git submodules.
 - `DRACO_TINYGLTF_PATH`: this path must contain tiny_gltf.h and its
   dependencies.
 
-When not specified the Draco build requires the presence of the submodules that
-are stored within `draco/third_party`.
+When not specified the Draco build uses the copies that are bundled within
+`draco/third_party`.
 
 Debugging and Optimization
 --------------------------
@@ -153,13 +149,8 @@ $ cmake ../ -DDRACO_SANITIZE=address
 Googletest Integration
 ----------------------
 
-Draco includes testing support built using Googletest. The Googletest repository
-is included as a submodule of the Draco git repository. Run the following
-command to clone the Googletest repository:
-
-~~~~~ bash
-$ git submodule update --init
-~~~~~
+Draco includes testing support built using Googletest. A copy of Googletest is
+bundled in `third_party/googletest`, so no additional download step is required.
 
 To enable Googletest unit test support the DRACO_TESTS cmake variable must be
 turned on at cmake generation time:
@@ -193,12 +184,9 @@ has dependencies on third party libraries:
 - [TinyGLTF](https://github.com/syoyo/tinygltf)
   - Provides GLTF I/O support.
 
-These dependencies are managed as Git submodules. To obtain the dependencies
-run the following command in your Draco repository:
-
-~~~~~ bash
-$ git submodule update --init
-~~~~~
+These dependencies are bundled in `third_party`. See `third_party/README.md` for
+the exact revisions and licenses, and for the files that were left out to keep
+the repository small.
 
 WebAssembly Decoder
 -------------------

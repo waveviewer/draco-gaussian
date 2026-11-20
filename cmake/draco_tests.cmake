@@ -111,7 +111,7 @@ macro(draco_setup_test_targets)
     draco_setup_googletest()
 
     if(NOT (EXISTS ${draco_gtest_all} AND EXISTS ${draco_gtest_main}))
-      message(FATAL_ERROR "googletest missing, run git submodule update --init")
+      message(FATAL_ERROR "googletest missing, restore the bundled copy in third_party")
     endif()
 
     list(APPEND draco_test_defines GTEST_HAS_PTHREAD=0)
