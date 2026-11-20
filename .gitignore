@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Build and install output
+build/
+install/
+docs/_site/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Compiled libraries and objects
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/

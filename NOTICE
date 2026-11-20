@@ -1,0 +1,19 @@
+Draco Gaussian
+Copyright 2025 Houqiang Zhong
+
+This product is a modified version of Draco
+(https://github.com/google/draco), Copyright 2016 The Draco Authors,
+licensed under the Apache License, Version 2.0.
+
+The modifications are based on google/draco commit 4e12ab2
+(Draco 1.5.7). The following files were changed to add 3D Gaussian
+splatting support:
+
+  src/draco/attributes/geometry_attribute.h
+  src/draco/io/ply_decoder.h
+  src/draco/io/ply_decoder.cc
+  src/draco/io/ply_encoder.cc
+  src/draco/io/point_cloud_io.cc
+  src/draco/tools/draco_encoder.cc
+
+All other source files are unchanged copies from the upstream repository.
